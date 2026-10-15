@@ -167,3 +167,9 @@ a.contact-item:hover {
   font-size: 0.75rem;
   color: #64748b;
 }
+/* Step 3: Prevent image overflow */
+img {
+  /* width: 1000px; */
+  max-width: 100%;
+  height: auto;
+}

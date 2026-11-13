@@ -1,175 +1,382 @@
+
+/* ========================================
+   BASIC RESET
+   ======================================== */
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+/* ========================================
+   MAIN PAGE DESIGN
+   ======================================== */
 
 body {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #0f172a;
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.25) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.2) 0px, transparent 50%);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  color: #f8fafc;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    background: #0f172a;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.25) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.2) 0px, transparent 50%);
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    color: #f8fafc;
+    transition: background 0.3s ease, color 0.3s ease;
 }
+
+/* ========================================
+   CARD WRAPPER
+   ======================================== */
 
 .card-wrapper {
-  width: 100%;
-  max-width: 440px;
-  perspective: 1000px;
+    width: 100%;
+    max-width: 440px;
+    perspective: 1000px;
 }
 
+/* ========================================
+   WEEK 11: DARK MODE BUTTON
+   ======================================== */
+
+#theme-toggle {
+    display: block;
+    margin: 0 auto 18px;
+    padding: 11px 20px;
+
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: #ffffff;
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#theme-toggle:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* ========================================
+   PROFILE CARD
+   ======================================== */
+
 .card {
-  background: rgba(30, 41, 59, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
-  padding: 36px 28px 24px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(30, 41, 59, 0.7);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+
+    padding: 36px 28px 24px;
+
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+                background 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 60px -12px rgba(99, 102, 241, 0.25);
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px -12px rgba(99, 102, 241, 0.25);
 }
 
+/* ========================================
+   PROFILE HEADER
+   ======================================== */
+
 .card-header {
-  text-align: center;
-  margin-bottom: 24px;
+    text-align: center;
+    margin-bottom: 24px;
 }
 
 .avatar-ring {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 16px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #6366f1, #a855f7);
-  padding: 3px;
-  box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.5);
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 16px;
+
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+
+    padding: 3px;
+
+    box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.5);
 }
 
 .avatar-initials {
-  width: 100%;
-  height: 100%;
-  background: #0f172a;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 1px;
+    width: 100%;
+    height: 100%;
+
+    background: #0f172a;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    color: #ffffff;
+    letter-spacing: 1px;
 }
 
 .name {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.5px;
-  margin-bottom: 4px;
+    font-size: 1.75rem;
+    font-weight: 700;
+
+    color: #ffffff;
+    letter-spacing: -0.5px;
+
+    margin-bottom: 4px;
 }
 
 .role {
-  font-size: 0.95rem;
-  color: #94a3b8;
-  font-weight: 400;
-  margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: #94a3b8;
+
+    font-weight: 400;
+    margin-bottom: 12px;
 }
 
 .badge {
-  display: inline-block;
-  background: rgba(99, 102, 241, 0.15);
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  color: #a5b4fc;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+    display: inline-block;
+
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+
+    color: #a5b4fc;
+
+    padding: 4px 12px;
+    border-radius: 20px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
+/* ========================================
+   CARD CONTENT
+   ======================================== */
+
 .card-content {
-  margin-bottom: 24px;
+    margin-bottom: 24px;
 }
 
 .bio {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: #cbd5e1;
-  text-align: center;
-  margin-bottom: 20px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    color: #cbd5e1;
+    text-align: center;
+
+    margin-bottom: 20px;
 }
 
+/* ========================================
+   SKILLS
+   ======================================== */
+
 .skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+    justify-content: center;
+
+    margin-bottom: 24px;
 }
 
 .skill-tag {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #e2e8f0;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  font-weight: 500;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: #e2e8f0;
+
+    padding: 6px 12px;
+    border-radius: 8px;
+
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
+
 .contact-section {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .contact-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
-  color: #e2e8f0;
-  text-decoration: none;
-  font-size: 0.85rem;
-  transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 16px;
+
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius: 12px;
+
+    color: #e2e8f0;
+    text-decoration: none;
+
+    font-size: 0.85rem;
+
+    transition: all 0.2s ease;
+
+    overflow-wrap: anywhere;
+    min-width: 0;
+}
+
+.contact-item .text {
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 a.contact-item:hover {
-  background: rgba(99, 102, 241, 0.15);
-  border-color: rgba(99, 102, 241, 0.4);
-  color: #ffffff;
-  transform: translateX(4px);
+    background: rgba(99, 102, 241, 0.15);
+    border-color: rgba(99, 102, 241, 0.4);
+
+    color: #ffffff;
+    transform: translateX(4px);
 }
 
 .contact-item .icon {
-  font-size: 1rem;
+    font-size: 1rem;
+    flex-shrink: 0;
 }
 
+/* ========================================
+   FOOTER
+   ======================================== */
+
 .card-footer {
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 16px;
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    padding-top: 16px;
 }
 
 .card-footer p {
-  font-size: 0.75rem;
-  color: #64748b;
+    font-size: 0.75rem;
+    color: #64748b;
 }
-/* Step 3: Prevent image overflow */
+
+/* ========================================
+   IMAGE RESPONSIVENESS
+   ======================================== */
+
 img {
-  /* width: 1000px; */
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========================================
+   WEEK 11: LIGHT MODE
+   ======================================== */
+
+body.dark-mode {
+    background: #f1f5f9;
+
+    background-image:
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.12) 0px, transparent 50%);
+
+    color: #1e293b;
+}
+
+body.dark-mode .card {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(99, 102, 241, 0.2);
+
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
+}
+
+body.dark-mode .avatar-initials {
+    background: #ffffff;
+    color: #6366f1;
+}
+
+body.dark-mode .name {
+    color: #1e293b;
+}
+
+body.dark-mode .role {
+    color: #64748b;
+}
+
+body.dark-mode .bio {
+    color: #475569;
+}
+
+body.dark-mode .skill-tag {
+    background: rgba(99, 102, 241, 0.08);
+    border-color: rgba(99, 102, 241, 0.15);
+    color: #334155;
+}
+
+body.dark-mode .contact-item {
+    background: rgba(99, 102, 241, 0.04);
+    border-color: rgba(99, 102, 241, 0.12);
+    color: #334155;
+}
+
+body.dark-mode a.contact-item:hover {
+    background: rgba(99, 102, 241, 0.12);
+    color: #312e81;
+}
+
+body.dark-mode .card-footer {
+    border-top-color: rgba(15, 23, 42, 0.12);
+}
+
+body.dark-mode .card-footer p {
+    color: #64748b;
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+   ======================================== */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 28px 20px 22px;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .contact-item {
+        font-size: 0.78rem;
+        padding: 11px 12px;
+    }
 }
